@@ -28,8 +28,13 @@ function downloadImage(image) {
 function displayImages(images) {
   output.innerHTML = "";
   images.forEach((img) => {
+    const link = document.createElement("a");
+    link.href = img.src;
+    link.download = true;
     const imgElement = document.createElement("img");
     imgElement.src = img.src;
-    output.appendChild(imgElement);
+    imgElement.alt = "Downloaded Image";
+    link.appendChild(imgElement);
+    output.appendChild(link);
   });
 }
