@@ -28,6 +28,8 @@ function downloadImage(image) {
 function displayImages(images) {
   output.innerHTML = "";
   images.forEach((img) => {
-    output.appendChild(img);
+    const imgElement = document.createElement("img");
+    imgElement.src = img.src;
+    output.appendChild(imgElement);
   });
 }
